@@ -18,12 +18,18 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf.urls.static import static
 from django.conf import settings
+<<<<<<< HEAD
 
+=======
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
 from drf_yasg import openapi as drf_yasg_openapi
 from drf_yasg import views as drf_yasg_views
 from rest_framework import permissions
 from rest_framework.schemas import get_schema_view
+<<<<<<< HEAD
 
+=======
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
 schema_view = drf_yasg_views.get_schema_view(
     drf_yasg_openapi.Info(
         title="Erp API",
@@ -35,19 +41,29 @@ schema_view = drf_yasg_views.get_schema_view(
     public=True,
     permission_classes=[permissions.AllowAny],
 )
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('api.user.urls')),
     path('', include('api.home.urls')),
 
+<<<<<<< HEAD
     # Swagger
+=======
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
     path("schema/", get_schema_view(title="API's", description="API for Erp contract",), name="openapi-schema",),
     path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
     path("swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui",),
     path("swagger/json/", schema_view.without_ui(cache_timeout=0), name="schema-json"),
+<<<<<<< HEAD
     path("swagger/yaml/", schema_view.without_ui(cache_timeout=0), name="schema-yaml"),
+=======
+    path("swagger/yaml/", schema_view.without_ui(cache_timeout=0), name="schema-yaml")
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)\
     +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

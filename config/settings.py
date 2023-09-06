@@ -45,10 +45,16 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS += [
     'rest_framework',
+<<<<<<< HEAD
     'rest_framework_simplejwt.token_blacklist',
     'rest_framework_swagger',
     'corsheaders',
     'drf_yasg'
+=======
+    'rest_framework_simplejwt',
+    'rest_framework_swagger',
+    'corsheaders',
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
 ]
 
 INSTALLED_APPS += [
@@ -156,10 +162,17 @@ REST_FRAMEWORK = {
 
 
 SIMPLE_JWT = {
+<<<<<<< HEAD
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=1),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
+=======
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
     "UPDATE_LAST_LOGIN": False,
 
     "ALGORITHM": "HS256",
@@ -230,6 +243,7 @@ CORS_ALLOW_HEADERS = (
 
 CSRF_TRUSTED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(",")
 CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(",")
+<<<<<<< HEAD
 
 
 # Swagger
@@ -242,3 +256,5 @@ SWAGGER_SETTINGS = {
     "FETCH_SCHEMA_WITH_QUERY": True,
     "DOC_EXPANSION": "none",
 }
+=======
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8

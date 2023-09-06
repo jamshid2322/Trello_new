@@ -74,10 +74,17 @@ class TaskConditionSerializer(CustomAbstractSerializer):
 
 
 class BoardCreateSerializer(CustomAbstractSerializer):
+<<<<<<< HEAD
     task_conditions = TaskConditionSerializer(many = True, read_only = True)
     class Meta:
         model = Board
         fields = ("id", "title", "creator", 'task_conditions')
+=======
+    task_coditons = TaskConditionSerializer(many = True, read_only = True)
+    class Meta:
+        model = Board
+        fields = ("id", "title", "creator", 'task_coditons')
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
 
     def to_representation(self, instance):
         res = super().to_representation(instance)
@@ -92,8 +99,13 @@ class BoardCreateSerializer(CustomAbstractSerializer):
     def create(self, validated_data):
         user = self.context['request'].user
         validated_data['creator'] = user
+<<<<<<< HEAD
         board = Board.objects.select_related('creator').filter(creator = user).first()
         if board.title == validated_data['title']:
+=======
+        board = Board.objects.select_related('creator').filter(creator = user)
+        if board.first():
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
             raise serializers.ValidationError("Board's title is unique")
         board = Board.objects.create(**validated_data)
         return board

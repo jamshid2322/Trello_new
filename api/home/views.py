@@ -42,6 +42,10 @@ class BoardApi(
 
 class BoardGetApi(
     RetrieveUpdateDestroyAPIView):
+<<<<<<< HEAD
+=======
+
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
     permission_classes = (IsAuthenticated, )
     serializer_class = BoardCreateSerializer
 

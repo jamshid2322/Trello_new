@@ -9,14 +9,24 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         board = Board.objects.select_related('creator',).filter(creator = user)
         board_member = BoardMember.objects.select_related('board', 'member').filter(member = user)
         print(board, board_member, user, "salom")
+<<<<<<< HEAD
         context = {"boards": [], "member_boards": []}
         for i in board:
             context['boards'].append({
+=======
+        context = {"boards": {}, "member_boards": {}}
+        for i in board:
+            context['boards'].update({
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
                 "board_id": i.id,
                 "title": i.title
             })
         for i in board_member:
+<<<<<<< HEAD
             context['member_boards'].append({
+=======
+            context['member_boards'].update({
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
                 "board_id": i.id,
                 "title": i.board.title,
                 "board_creator":{

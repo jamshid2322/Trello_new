@@ -11,7 +11,11 @@ class Board(CustomAbstractModel):
         return self.title
 
 class TaskCondition(CustomAbstractModel):
+<<<<<<< HEAD
     board = models.ForeignKey(Board, on_delete=models.CASCADE, related_name="task_conditions")
+=======
+    board = models.ForeignKey(Board, on_delete=models.CASCADE, related_name="task_coditons")
+>>>>>>> 343ed70d07ae827d8b9bc8d279d024157b9ef0f8
     creator = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=13)
     description = models.TextField(blank=True, null=True)
